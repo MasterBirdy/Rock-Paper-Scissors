@@ -15,6 +15,14 @@ function computerPlay(){
 }
 
 function playSingleRound(playerSelection, computerSelection){
+     if (!hasStarted)
+     {
+          const allRPS = document.querySelectorAll(".rps");
+          allRPS.forEach((thing) => {
+               thing.classList.remove("hasntstarted");
+          });
+          hasStarted = true;
+     }
      if (playerSelection === 'rock')
      {
           if (computerSelection === 'rock')
@@ -146,17 +154,36 @@ function updateImages(playerSelection, computerSelection){
           youBox.classList.add("tie");
           opponentBox.classList.add("tie");
      }
+     if (playerScore >= 5)
+     {
+          announceWinner("Player");
+     }
+     else if (computerScore >= 5)
+     {
+          announceWinner("Computer");
+     }
+}
+
+function announceWinner(winner){
+     for(let i = 0; i < rpsarray.length; i++)
+     {
+          rpsarray[i].classList.add("gameoff");
+     }
+     winnerButton.classList.remove("gameoff");
+     winnerButton.textContent = winner + " won! Play again?";
 }
 
 
 let playerScore = 0;
 let computerScore = 0;
 let whoWon = "";
+let hasStarted = false;
 
 const imageholders = [].slice.call(document.querySelectorAll("img"));
 const rockButton = document.getElementById('rockbutton');
 const scissorsButton = document.getElementById('scissorsbutton');
 const paperButton = document.getElementById('paperbutton');
+const winnerButton = document.getElementById('playagainbutton');
 const youBox = document.getElementById('youBox');
 const opponentBox = document.getElementById('opponentBox');
 const scores = [].slice.call(document.querySelectorAll("td"));
@@ -168,6 +195,23 @@ scissorsButton.addEventListener("click", function(){
 });
 paperButton.addEventListener("click", function(){
      playSingleRound("paper", computerPlay());
+});
+const rpsarray = [rockButton, scissorsButton, paperButton];
+winnerButton.addEventListener("click", function(){
+     for(let i = 0; i < rpsarray.length; i++)
+     {
+          rpsarray[i].classList.remove("gameoff");
+     }
+     winnerButton.classList.add("gameoff");
+     playerScore = 0;
+     computerScore = 0;
+     scores[0].textContent = playerScore;
+     scores[1].textContent = computerScore;
+     const allRPS = document.querySelectorAll(".rps");
+     allRPS.forEach((thing) => {
+          thing.classList.add("hasntstarted");
+     });
+     hasStarted = false;
 });
 
 

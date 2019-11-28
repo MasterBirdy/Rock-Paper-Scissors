@@ -58,7 +58,6 @@ h2{
 
 .rps{
      position: relative;
-     background-color: #e679e2;
      border-radius: 10px;
      flex-shrink: 0;
      display: flex;
@@ -143,7 +142,7 @@ button:focus{
 }
 
 button:active{
-     background-color: #81479e;
+     background-color: #6c3b85;
 }
 
 table{
@@ -188,4 +187,11 @@ td{
 }
 .tie{
      background-color: #dfc800;
+}
+.gameoff{
+     display: none;
+}
+
+.hasntstarted{
+     background-color: #e679e2;
 }
