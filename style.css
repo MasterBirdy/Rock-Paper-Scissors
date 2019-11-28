@@ -1,0 +1,191 @@
+html{
+     font-family: 'Montserrat', sans-serif;
+     text-align: center;
+     min-width: 800px;
+     background-image: url("11432.jpg");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;
+     background-color: rgba(255, 144, 255, 0.9);
+     background-blend-mode: lighten;
+}
+
+h1{
+     position: relative;
+     display: inline-block;
+     font-size: 4.4rem;
+     text-transform: uppercase;
+     color: #b941c4;
+     text-shadow: 3px 3px 0px #ffffff, 8px 8px 0px rgba(0,0,0,.1);
+     transform: skew(1deg, 1deg);
+     margin-bottom: .5rem;
+     transition: all ease 0.2s;
+}
+
+h1:hover{
+     transform: scale(1.1);
+}
+
+h2{
+     display: inline-block;
+     font-size: 2rem;
+     text-transform: uppercase;
+     color: #9346d1;
+     text-shadow:   1px 1px 0px #ffffff,
+                    2px 2px 0px #ffffff;
+     margin-bottom: .5rem;
+}
+#container{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin: 0 auto;
+     margin-bottom: 2rem;
+}
+
+#container2{
+     position: relative;
+     left: 1.8rem;
+     margin: 0 auto;
+     max-width: 540px;
+     display: flex;
+     justify-content: space-around;
+}
+.space{
+     content: "";
+     min-width: 1rem;
+}
+
+.rps{
+     position: relative;
+     background-color: #e679e2;
+     border-radius: 10px;
+     flex-shrink: 0;
+     display: flex;
+     flex-direction: column;
+     align-self: stretch;
+     align-items: center;
+     justify-content: center;
+     width: 400px;
+     height: 400px;
+     z-index: 2;
+}
+
+img{
+     position: absolute;
+     width: 100%;
+     top: 5%;
+
+}
+
+button{
+     position: relative;
+     display: inline-block;
+     padding: 15px 35px;
+     font-size: 1.6rem;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 500;
+     margin: 0 10px;
+     border: 3px solid #e5d3eb;
+     color: white;
+     text-transform: uppercase;
+     font-weight: 500;
+     background-color: #a25ac7;
+     transition: all ease 0.3s;
+}
+
+button::after{
+     position: absolute;
+     top: 25%;
+     right: .6rem;
+     content: "\2702";
+     transition: all ease 0.3s;
+     opacity: 0;
+}
+
+#paperbutton::after{
+     content:"\25A2";
+     top: 20%;
+}
+
+#rockbutton::after{
+     content:"\25CE";
+     top: 20%;
+}
+
+#youImage{
+     transition: all ease 0.4s;
+}
+
+#youImage:hover{
+     transform: rotate(15deg);
+}
+
+#opponentImage{
+     transition: all ease 0.4s;
+}
+
+#opponentImage:hover{
+     transform: rotate(-15deg);
+}
+
+button:hover{
+     padding: 15px 50px 15px 20px;
+}
+
+button:hover::after{
+     right: 1.2rem;
+     opacity: 1;
+}
+
+button:focus{
+     outline: 0;
+}
+
+button:active{
+     background-color: #81479e;
+}
+
+table{
+     margin: 1rem auto 0;
+
+}
+th{
+     padding: .5rem 2rem 0;
+     text-transform: uppercase;
+}
+
+th{
+     position: relative;
+     font-size: 1.6rem;
+     color: #9346d1;
+     text-shadow: 1px 1px 0px #ffffff,
+                  2px 2px 0px #ffffff;;
+}
+td{
+     position: relative;
+     margin-top: 0;
+     padding-top: 0;
+     top: -2rem;
+     font-size: 7rem;
+     font-family: "Dekko", sans-serif;
+     font-weight: 400;
+     color: #770e3a;
+     text-shadow: 1px 1px #300000,
+                  2px 2px #300000,
+                  3px 3px #300000,
+                  4px 4px #300000,
+                  5px 5px #300000,
+                  6px 6px #300000,
+                  7px 7px 10px rgba(0,0,0,.5);
+
+}
+.won{
+     background-color: #53de19;
+}
+.lost{
+     background-color: #e00e0e;
+}
+.tie{
+     background-color: #dfc800;
+}
